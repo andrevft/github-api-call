@@ -35,8 +35,22 @@ export const LinkHome = styled(Link)`
   width: 4rem;
   text-align: center;
   margin: 2rem auto;
-  background-color: #000;
+  background-color: #2dba4e;
   padding: .5rem 0;
   color: #fff;
   text-decoration: none;
+  border: 0;
+  border-radius: .25rem;
+  font-family: sans-serif;
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  };
+  &:hover {
+    outline: none;
+    box-shadow: 1px 1px 5px grey;
+    cursor:pointer;
+  }
 `;

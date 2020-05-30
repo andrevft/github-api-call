@@ -6,6 +6,7 @@ export const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  font-family: sans-serif;
 `;
 
 
@@ -28,8 +29,8 @@ export const Content = styled.div`
 
 export const Input = styled.input`
   border: 1px solid #ddd;
-  height: 1.5rem;
-  padding: 0 .5rem;
+  height: 2.5rem;
+  padding: 0 1rem;
   border-radius: .25rem 0 0 .25rem;
 
   &:focus,
@@ -40,9 +41,10 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  height: 1.5rem;
-  border: 1px solid #000;
-  background: #000;
+  height: 2.5rem;
+  border: 0;
+  padding:  0 1rem;
+  background: #2dba4e;
   color: #fff;
   border-radius: 0 .25rem .25rem 0;
 
@@ -50,6 +52,12 @@ export const Button = styled.button`
   &:active {
     outline: none;
     box-shadow: none;
+  };
+
+  &:hover {
+    outline: none;
+    box-shadow: 1px 1px 5px grey;
+    cursor:pointer;
   }
 `;
 

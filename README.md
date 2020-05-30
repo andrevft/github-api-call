@@ -1,4 +1,4 @@
-# Git Calling
+# :telephone_receiver: Git Calling
 Projeto baseado nos estudos de aula sobre React do programa Hiring Coders da Gama Academy.
 
 ## A aplicação

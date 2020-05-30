@@ -6,8 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 function App(props) {
   const history = useHistory();
-  const [ usuario, setUsuario ] = useState('');
-  const [ erro, setErro ] = useState(false);
+  const [usuario, setUsuario] = useState('');
+  const [erro, setErro] = useState(false);
   const API_URL = `https://api.github.com/users/${usuario}/repos`;
 
   function handlePesquisa() {
@@ -19,7 +19,7 @@ function App(props) {
           repositoriesName.push(repository);
         });
 
-        
+
         localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName)); //transforma em string
         setErro(false);
         history.push('/repositories'); //sempre que os dados são salvos ele chama a rota
@@ -29,20 +29,26 @@ function App(props) {
       });
 
 
-      
+
   }
 
   return (
     <S.HomeContainer>
-      <S.Content>
-      <S.Init>Digite o nome de usuário GitHub para ver seus repositórios</S.Init>
-      </S.Content>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">GitHub calling</h1>
+          <p class="lead">Type a GitHub username to see its repositories.</p>
+        </div>
+      </div>
 
       <S.Content>
-        <S.Input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={e => setUsuario(e.target.value)} />
-        <S.Button type="button" onClick={handlePesquisa}>Pesquisar</S.Button>
+        <S.Input className="usuarioInput" placeholder="User" value={usuario} onChange={e => setUsuario(e.target.value)} />
+        <S.Button type="button" onClick={handlePesquisa}>Search</S.Button>
       </S.Content>
-      { erro ? <S.ErrorMsg>Ocorreu um erro. Tente novamente.</S.ErrorMsg> : '' }
+      {erro ? <S.ErrorMsg>An error occured. Try again.</S.ErrorMsg> : ''}
+      <div class="alert alert-light" role="alert">
+        You can try "filipedeschamps" as example!
+      </div>
     </S.HomeContainer>
   );
 }

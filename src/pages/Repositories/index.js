@@ -21,23 +21,23 @@ export default function Repositories() {
 
   return (
     <div className="container">
-      <div className="col-xs-8">
-        <h1>Repositórios</h1>
+      <div className="col-xs-8 mt-3">
+        <h1>Repositories</h1>
         {repositories.map(repository => (
-          <div className="card mb-2 mt-3">
-            <div className="card-body">
+          <div className="card mb-2 mt-3 border-secondary">
+            <div className="card-body ">
               <h5 className="card-title mb-3">{repository.name}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
+              <h6 className="card-text mb-2 text-secondary">
                 {repository.description}
               </h6>
-              <h6 className="card-subtitle mb-2 text-muted"> <a href={repository.html_url} target="_blank">
+              <h6 className="card-text mb-2"> <a href={repository.html_url} target="_blank">
                 {repository.html_url}    </a>
               </h6>
             </div>
           </div>
         ))}
       </div>
-      <S.LinkHome to="/">Voltar</S.LinkHome>
+      <S.LinkHome to="/">Back</S.LinkHome>
     </div>
 
   )

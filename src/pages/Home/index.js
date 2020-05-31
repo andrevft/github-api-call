@@ -36,7 +36,7 @@ function App(props) {
     <S.HomeContainer>
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">GitHub calling</h1>
+          <h1 class="display-4 mb-2">GitHub Calling</h1>
           <p class="lead">Type a GitHub username to see its repositories.</p>
         </div>
       </div>
@@ -46,9 +46,14 @@ function App(props) {
         <S.Button type="button" onClick={handlePesquisa}>Search</S.Button>
       </S.Content>
       {erro ? <S.ErrorMsg>An error occured. Try again.</S.ErrorMsg> : ''}
-      <div class="alert alert-light" role="alert">
+      <div class="alert alert-light mb-5" role="alert">
         You can try "filipedeschamps" as example!
       </div>
+
+      <footer class="site-footer mt-5">
+            <p class="text-center text-black">Developed with ❤ by <a href="https://github.com/andrevft" target="_blank"
+                    rel="" class="badge badge-dark"> André Terrasan</a> </p>
+        </footer>
     </S.HomeContainer>
   );
 }

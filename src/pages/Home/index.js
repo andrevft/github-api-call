@@ -9,12 +9,16 @@ function App(props) {
   const [usuario, setUsuario] = useState('');
   const [erro, setErro] = useState(false);
   const API_URL = `https://api.github.com/users/${usuario}/repos`;
+ 
 
   function handlePesquisa() {
+
     axios.get(API_URL)
       .then(response => {
         const repositories = response.data;
         const repositoriesName = [];
+        
+
         repositories.map((repository) => {
           repositoriesName.push(repository);
         });
@@ -28,7 +32,7 @@ function App(props) {
         setErro(true);
       });
 
-
+      localStorage.setItem('usuario', JSON.stringify(usuario));
 
   }
 
@@ -51,9 +55,9 @@ function App(props) {
       </div>
 
       <footer class="site-footer mt-5">
-            <p class="text-center text-black">Developed with ❤ by <a href="https://github.com/andrevft" target="_blank"
-                    rel="" class="badge badge-dark"> André Terrasan</a> </p>
-        </footer>
+        <p class="text-center text-black">Developed with ❤ by <a href="https://github.com/andrevft" target="_blank"
+          rel="" class="badge badge-dark"> André Terrasan</a> </p>
+      </footer>
     </S.HomeContainer>
   );
 }

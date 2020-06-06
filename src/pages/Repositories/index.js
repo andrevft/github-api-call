@@ -5,13 +5,18 @@ import { useHistory } from 'react-router-dom';
 export default function Repositories() {
   const history = useHistory();
   const [repositories, setRepositories] = useState([]);
+  const [usuario, setUsuario] = useState([]);
 
   useEffect(() => {
     let repositoriesName = localStorage.getItem('repositoriesName');
+    let usuario = localStorage.getItem('usuario');
+
     if (repositoriesName !== null) {
       repositoriesName = JSON.parse(repositoriesName); //traansforma em objeto novamente
+      usuario = JSON.parse(usuario);
       setRepositories(repositoriesName);
-      localStorage.clear();
+      setUsuario(usuario);
+       localStorage.clear();
     } else {
       history.push('/')
     }
@@ -22,7 +27,7 @@ export default function Repositories() {
   return (
     <div className="container">
       <div className="col-xs-8 mt-3">
-        <h1>Repositories</h1>
+        {<h1>Repositories from  {usuario}</h1>}
         {repositories.map(repository => (
           <div className="card mb-2 mt-3 border-secondary">
             <div className="card-body ">
